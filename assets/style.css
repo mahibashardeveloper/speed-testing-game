@@ -1,0 +1,196 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #17A2B8;
+    position: relative;
+}
+
+::selection{
+    color: #fff;
+    background: #17A2B8;
+}
+.box{
+    width: 770px;
+    padding: 35px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+.box .gamer-header{
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.box .form-control{
+    opacity: 0;
+    z-index: -999;
+    position: absolute;
+}
+.box .inner-box{
+    padding: 13px 20px 0;
+    border-radius: 10px;
+    border: 1px solid #bfbfbf;
+}
+.inner-box .textarea{
+    overflow: hidden;
+    max-height: 256px;
+}
+.textarea::-webkit-scrollbar{
+    width: 0;
+}
+.textarea p{
+    font-size: 18px;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+.textarea p span{
+    position: relative;
+}
+.textarea p span.correct{
+    color: #56964f;
+}
+.textarea p span.incorrect{
+    color: #cb3439;
+    outline: 1px solid #fff;
+    background: #ffc0cb;
+    border-radius: 4px;
+}
+.textarea p span.active{
+    color: #17A2B8;
+}
+.textarea p span.active::before{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 5px;
+    background: #17A2B8;
+    animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink{
+    50%{
+        opacity: 1;
+    }
+}
+.inner-box .content{
+    margin-top: 17px;
+    display: flex;
+    padding: 12px 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #bfbfbf;
+}
+.content button{
+    outline: none;
+    border: none;
+    width: 105px;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #17A2B8;
+    transition: transform 0.3s ease;
+}
+.content button:active{
+    transform: scale(0.97);
+}
+.content button:hover{
+    background: rgba(23, 162, 184, 0.8);
+}
+.content .group-btn{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: calc(100% - 140px);
+    justify-content: space-between;
+}
+.group-btn li{
+    display: flex;
+    height: 20px;
+    list-style: none;
+    position: relative;
+    align-items: center;
+}
+.group-btn li:not(:first-child){
+    padding-left: 22px;
+    border-left: 1px solid #bfbfbf;
+}
+.group-btn li p{
+    font-size: 19px;
+}
+.group-btn li span{
+    display: block;
+    font-size: 20px;
+    margin-left: 10px;
+}
+li span b{
+    font-weight: 500;
+}
+li:not(:first-child) span{
+    font-weight: 500;
+}
+@media (max-width: 745px) {
+    .box{
+        padding: 20px;
+    }
+    .inner-box .content{
+        padding: 20px 0;
+    }
+    .inner-box .textarea{
+        max-height: 100%;
+    }
+    .textarea p{
+        font-size: 18px;
+        text-align: left;
+    }
+    .content button{
+        width: 100%;
+        font-size: 15px;
+        padding: 10px 0;
+        margin-top: 20px;
+    }
+    .content .group-btn{
+        width: 100%;
+    }
+    .group-btn li:not(:first-child){
+        border-left: 0;
+        padding: 0;
+    }
+    .group-btn li p,
+    .group-btn li span{
+        font-size: 17px;
+    }
+}
+@media (max-width: 518px) {
+    .box .inner-box{
+        padding: 10px 15px 0;
+    }
+    .textarea p{
+        font-size: 18px;
+    }
+    .group-btn li{
+        margin-bottom: 10px;
+    }
+    .content button{
+        margin-top: 10px;
+    }
+}
